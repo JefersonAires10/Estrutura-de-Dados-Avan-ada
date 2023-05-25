@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Questão 01</title>
+
+  <!-- MATHJAX 3 (através da CDN) -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+    <center><h1>Questão 01</h1></center>
+    <p>
+        A complexidade de tempo para exclusão de nós em uma árvore AVL é \(O(log \, n)\),<br>
+        pois, a altura da árvore AVL é logarítmica em relação ao número de nós.<br>
+        <br>
+        <center><img  
+            style="width: 50%; height: 50%;"        
+            src="/Atividade AVL/Questão 01/images/árvore.png" alt="arvores">
+        </center>
+        <br>
+        \(Árvore \, 01\)
+        <br>
+        Se quisermos excluir o nó 12, basta andar na árvore até o mesmo, removê-lo, em seguida,<br>
+        percorrer o caminho da raíz até o nó 12, e verificar se a árvore está balanceada.<br>
+        Como a altura da árvore é proporcional ao número de nós, ou seja, \(log \, n\), isso garante que a exclusão e<br>
+        as demais operações, serão executadas em tempo \(O(log \, n)\).
+        <br><br>
+        \(Árvore \, 02\)
+        <br>
+        Se quisermos excluir o nó com valor 5, teremos que fazer com o que o nó 6 suba para a posição do nó 5. A solução seria<br>
+        uma rotação simples à esquerda no nó 5, rebalanceado a árvore. Como a altura da árvore é logarítmica em relação ao número de nós,<br>
+        essa exclusão será feita em tempo \(O(log \, n)\).
+        <br><br>
+        \(Árvore \, 03\)
+        <br>
+        Se quisermos excluir o nó com valor 4, primeiro encontramos o nó, em seguida, usamos uma rotação simples<br>
+        à esquerda no nó, que por sua vez ficou desbalanceado. Depois, usamos uma rotação simples à direita no nó 7 <br>
+        e uma rotação simples à esquerda no nó 4.
+        <br><br>
+        Ou seja, temos um exemplo de uma família de árvores AVL, cuja exclusão de nós e as operações de rotação<br>
+        para o rebalanceamento, implica em tempo \(O(log \, n)\).
+    </p>
+    
+</body>
+</html>
