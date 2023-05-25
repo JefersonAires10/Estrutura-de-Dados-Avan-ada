@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Questão 02</title>
+
+  <!-- MATHJAX 3 (através da CDN) -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- MATHJAX 3 (salvo no computador) -->
+  <!-- <script type="text/javascript" async src="../../../Aplicativos/MathJax-master/es5/tex-mml-chtml.js" async></script> -->
+</head>
+<body style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+    <center><h1>Questão 02</h1></center>
+    <p>
+      &nbsp &nbsp &nbsp &nbspA exclusão de um nó em árvores AVL, também pode ser feita em \(O(log \, n)\), ao contrário da inserção, agora o número de rotações necessárias para a regulagem da árvore pode atingir \(O(log \, n)\).
+        <center><strong>1.</strong> Fazemos uma busca pelo nó a ser removido.
+        <br> <strong>2.</strong> Se o nó encontrado for nulo, então a árvore é vazia ou a chave não existe na árvore. Não há o que remover neste caso.
+        <br> <strong>3.</strong> Caso o nó \(x\) seja encontrado, com a chave desejada, tratamos de removê-lo da árvore. Há somente dois casos a considerar:
+        <br> &nbsp &nbsp &nbsp &nbsp <strong>(a)</strong> Se o nó \(x\) não tiver filho direito, então seu filho esquerdo (seja ele vazio ou não) assume o papel de \(x\) e o nó \(x\) é liberado.
+        <br> &nbsp&nbsp&nbsp&nbsp - Todos os ancestrais de \(x\) devem ter suas alturas atualizadas e devem ser regulados, caso necessário, por meio de rotação apropriada.
+        <br> &nbsp&nbsp&nbsp&nbsp <strong>(b)</strong> Se o nó \(x\) tiver filho direito, trocamos a chave de \(x\) com a chave do seu nó sucessor  e o nó sucessor é liberado.
+        <br> &nbsp&nbsp&nbsp&nbsp - Todos os nós que estiverem no caminho do antigo pai do sucessor de \(x\) até a raíz da árvore devem ter suas alturas atualizadas e devem ser regulados , caso necessário, por meio de rotação apropriada.
+        <br></center>
+        <br> <strong>Caso 1.</strong> Quando as alturas das subárvores de \(p\) são iguais.
+        <br> &nbsp&nbsp&nbsp&nbsp - Podemos remover o nó \(x\) e a altura \(h\) permanece inalterada e nenhuma regulagem é necessária e nem futuramente. Como removemos o nó, o fator de balanceamento de \(p\), agora é = +1.
+        <br>
+        <br> <strong>Caso 2.</strong> Remoção da subárvore mais alta de \(p\).
+        <br> &nbsp&nbsp&nbsp&nbsp A altura da árvore diminui, nenhuma regulagem é necessária aqui, mas algum ancestral de \(p\) pode ter se tornado desregulado. Porém, como removemos o nó, o fator de balaceamento de \(p\) agora é 0, que antes era = -1.
+        <br>
+        <br> <strong>Caso 3.</strong> Remoção da subárvore mais baixa de \(p\).
+        <br> &nbsp&nbsp&nbsp&nbsp Neste caso, há três subcasos a considerar, dependendo do fator de balanceamento do filho direito da raíz de \(p\), que pode ser 0, +1 ou -1.
+        <br>
+        <br> &nbsp&nbsp&nbsp&nbsp <strong> 3.1 </strong> Filho direito de \(p\), o nó \(b\), tem balanço = 0.
+        <br> &nbsp&nbsp&nbsp&nbsp A solução correta seria uma rotação simples a esquerda. Ou seja, nó filho direito de \(p\) sobe para a raíz e o nó \(p\) se torna filho esquerdo de \(b\). Nó \(b\) fica com fator de balanceamento de -1 e \(p\) fica com fator de balanceamento de +1. Altura da árvore permanece inalterada e nenhuma regulagem acontecerá mais.
+        <br>
+        <br> &nbsp&nbsp&nbsp&nbsp <strong> 3.2 </strong> Filho direito de \(p\), o nó \(b\), tem balanço = +1.
+        <br> &nbsp&nbsp&nbsp&nbsp A solução correta seria uma rotação simples a esquerda. A altura da árvore diminui, ou seja, algum ancestral pode ter se tornado desregulado. O nó filho direito de \(p\) sobe para a raíz e o nó \(p\) se torna filho esquerdo de \(b\). Nó \(b\) fica com fator de balanceamento de 0 e \(p\) fica com fator de balanceamento de 0.
+        <br>
+        <br> &nbsp&nbsp&nbsp&nbsp <strong> 3.3 </strong> Filho direito de \(p\), o nó \(b\), tem balanço = -1.
+        <br> &nbsp&nbsp&nbsp&nbsp Ou seja, o nó \(p\) tem um filho direito, que seria o nó \(b\) e o nó \(b\) tem um filho esquerdo, um nó \(c.\)
+        <br> &nbsp&nbsp&nbsp&nbsp A solução correta seria uma rotação esquerda dupla. A altura da árvore diminui, ou seja, algum ancestral pode ter se tornado desregulado. Ou seja, o nó \(c\) se torna a raíz da árvore \(p\) se torna filho esquerdo de \(c\) e \(b\) filho direito de \(c\) O nó \(p\) fica com fator de balanceamento de 0 e o nó \(b\) igualmente.
+    </p>
+  
+</body>
+</html>
