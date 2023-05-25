@@ -25,7 +25,7 @@ int main()
 	else
 		cout << "Nao contem 5" << endl;
 
-	if(arv.contains(78))
+	if(arv.contains(78))			
 		cout << "Contem 78" << endl;
 	else
 		cout << "Nao contem 78" << endl;
